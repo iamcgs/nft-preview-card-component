@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+
+:root {
+    --soft-blue: hsl(215, 51%, 70%);
+    --cyan: hsl(178, 100%, 50%);
+    --cyan-overlay: hsla(178, 100%, 50%, 0.35);
+    --dark-blue-main: hsl(217, 54%, 11%);
+    --dark-blue-card: hsl(216, 50%, 16%);
+    --dark-blue-line: hsl(215, 32%, 27%);
+    --white: hsl(0, 0%, 100%);
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Outfit', sans-serif;
+    font-size: 18px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--dark-blue-main);
+}
+
+/* CARD CONTAINER */
+main {
+    width: 375px;
+    height: 600px;
+    padding: 25px;
+    margin: 25px auto;
+    background-color: var(--dark-blue-card);
+    border-radius: 25px;
+
+}
+
+/* CARD IMAGE */
+.card-img {
+    position: relative;
+}
+
+.card-img img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.view-icon {
+    position: absolute;
+    background-color: var(--cyan-overlay);
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    opacity: 0;
+    cursor: pointer;
+    transition: all 1s;
+}
+
+.view-icon:hover {
+    opacity: 1;
+}
+
+.view-icon img {
+    width: 50px;
+}
+
+/* CARD DETAILS */
+.card-details h2 {
+    color: var(--white);
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 1s;
+}
+
+.card-details h2:hover {
+    color: var(--cyan);
+}
+
+.card-details p {
+    color: var(--soft-blue);
+}
+
+.card-price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--dark-blue-line);
+}
+
+.card-price .eth {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 5px;
+    color: var(--cyan);
+}
+
+.days-left {
+    color: var(--soft-blue);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 5px;
+}
+
+/* CREATOR INFO */
+.card-creator {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 15px;
+    color: var(--soft-blue);
+    margin-top: 4px;
+}
+
+.card-creator img {
+    width: 30px;
+    height: 30px;
+    border: 1px solid var(--white);
+    border-radius: 50%;
+}
+
+.card-creator span {
+    color: var(--white);
+    cursor: pointer;
+    transition: all 1s;
+}
+
+.card-creator span:hover {
+    color: var(--cyan);
+}
+
+
+/* FOOTER */
+footer{
+    margin: 20px auto;
+    color: var(--white);
+}
+
+.attribution { 
+    font-size: 11px; text-align: center; 
+}
+
+.attribution a { 
+    color: var(--cyan); 
+}
+
+/* MEDIA QUERIES */
+@media (min-width: 768px) {
+   
+    /* CARD CONTAINER */
+    main {
+        width: 400px;
+        height: 650px;
+    }
+   
+    /* CARD DETAILS */
+    .card-price {
+        padding-top: 5px;
+        padding-bottom: 25px;
+        }
+    
+    .card-price .eth {
+        gap: 7px;
+    }
+    
+    .days-left {
+        gap: 7px;
+    }
+    
+    /* CREATOR INFO */
+    .card-creator {
+        margin-top: 5px;
+    }
+    
+    .card-creator img {
+        width: 40px;
+        height: 40px;
+    }
+} 
